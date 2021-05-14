@@ -6,6 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".screens.ComponentDetails">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
     <androidx.cardview.widget.CardView
 
         app:cardCornerRadius="20dp"
@@ -19,14 +26,27 @@
 
             android:layout_width="match_parent"
             android:layout_height="200dp">
-            <ImageView
-                android:id="@+id/componentImg"
-                android:scaleType="fitCenter"
-                android:layout_margin="10dp"
-                android:src="@drawable/category_background"
-                android:layout_weight="1"
+            <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="200dp"/>
+                android:layout_weight="1"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/componentImg"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/category_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ProgressBar
+                    android:id="@+id/progressbar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/componentDesc"
                 android:layout_margin="10dp"
@@ -35,6 +55,9 @@
                 android:text="Some details on how the component will work and where you can use it"
                 android:layout_width="0dp"
                 android:layout_height="200dp"/>
+
+
+
 
         </LinearLayout>
 
@@ -71,6 +94,7 @@
                 android:layout_marginVertical="10dp" />
 
             <TextView
+                android:id="@+id/oth_att_textView"
                 android:drawableLeft="@drawable/ic_baseline_view_headline_24"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -93,3 +117,18 @@
 
 
 </LinearLayout>
+
+<!--<ScrollView-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_weight="1"-->
+<!--android:layout_height="200dp">-->
+
+<!--<TextView-->
+<!--    android:id="@+id/componentDesc"-->
+<!--    android:layout_margin="10dp"-->
+<!--    android:gravity="center"-->
+<!--    android:text="Some details on how the component will work and where you can use it"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"/>-->
+
+<!--</ScrollView>-->
