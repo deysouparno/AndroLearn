@@ -20,12 +20,14 @@ class CategoryItems : AppCompatActivity() {
 
         setContentView(R.layout.activity_category_items)
 
-        Toast.makeText(this, ""+ compList[0], Toast.LENGTH_SHORT).show()
+        val categoryTitle: String? = intent.getStringExtra("categoryTitle")
+
+        Toast.makeText(this, ""+ categoryTitle, Toast.LENGTH_SHORT).show()
 //        Toast.makeText(this, ""+ compList[1], Toast.LENGTH_SHORT).show()
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar?.title = compList[0]
+        actionBar?.title = categoryTitle
 
 
         categoryItemsRV=findViewById(R.id.categoryItemsRV)

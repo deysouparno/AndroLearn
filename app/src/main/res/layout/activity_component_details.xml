@@ -26,35 +26,31 @@
 
             android:layout_width="match_parent"
             android:layout_height="200dp">
-            <FrameLayout
+
+            <ImageView
+                android:id="@+id/componentImg"
+                android:scaleType="fitCenter"
+                android:layout_margin="10dp"
+                android:src="@drawable/image_loading"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <ScrollView
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:padding="10dp"
+                android:scrollbars="none"
                 android:layout_height="200dp">
 
-                <ImageView
-                    android:id="@+id/componentImg"
-                    android:scaleType="fitCenter"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/category_background"
+                <TextView
+                    android:id="@+id/componentDesc"
+                    android:gravity="center"
+                    android:text="Some details on how the component will work and where you can use it"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
-                <ProgressBar
-                    android:id="@+id/progressbar_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
-
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/componentDesc"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="Some details on how the component will work and where you can use it"
-                android:layout_width="0dp"
-                android:layout_height="200dp"/>
+            </ScrollView>
 
 
 

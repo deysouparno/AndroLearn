@@ -23,7 +23,6 @@ class ComponentDetails : AppCompatActivity() {
 
     private lateinit var oth_att_textView: TextView
     private lateinit var progressBar: ProgressBar
-    private lateinit var progressBarImage: ProgressBar
     private lateinit var necessaryRV: RecyclerView
     private lateinit var optionalRV: RecyclerView
     private lateinit var componentDesc: TextView
@@ -45,7 +44,6 @@ class ComponentDetails : AppCompatActivity() {
         componentDesc = findViewById(R.id.componentDesc)
         oth_att_textView = findViewById(R.id.oth_att_textView)
         progressBar = findViewById(R.id.progressbar)
-        progressBarImage = findViewById(R.id.progressbar_image)
 
         val compTitle : String? = intent.getStringExtra("compTitle")
 
@@ -87,12 +85,11 @@ class ComponentDetails : AppCompatActivity() {
                     Glide.with(this)
                         .load(componentDetailList[0].comp_image)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .placeholder(R.drawable.category_background)
+                        .placeholder(R.drawable.image_loading)
                         .error(R.drawable.background)
                         .timeout(60000)
                         .into(componentImg)
 
-                    progressBarImage.visibility = View.GONE
 
 
                     for (nessAttDetail in componentDetailList[0].comp_ness_att) {
@@ -123,7 +120,6 @@ class ComponentDetails : AppCompatActivity() {
             }
             .addOnCanceledListener {
                 progressBar.visibility = View.GONE
-                progressBarImage.visibility = View.GONE
                 Toast.makeText(this, "Something went wrong!!!", Toast.LENGTH_SHORT).show()
             }
     }
